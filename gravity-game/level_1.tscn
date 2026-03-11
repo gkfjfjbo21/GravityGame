@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://bbhfwylrm13lj"]
+
+[ext_resource type="Script" uid="uid://v76xgbpfnmrh" path="res://level_1.gd" id="1"]
+[ext_resource type="PackedScene" path="res://block.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://spike.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://goal.tscn" id="4"]
+[ext_resource type="Script" uid="uid://bs7chs3grtugr" path="res://player.gd" id="5"]
+
+[node name="Level1" type="Node2D" unique_id=910788996]
+script = ExtResource("1")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1029126187]
+
+[node name="Top" parent="Walls" unique_id=1606255340 instance=ExtResource("2")]
+position = Vector2(576, 10)
+block_size = Vector2(1152, 20)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Bottom" parent="Walls" unique_id=1857012097 instance=ExtResource("2")]
+position = Vector2(576, 1490)
+block_size = Vector2(1152, 20)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Left" parent="Walls" unique_id=47759807 instance=ExtResource("2")]
+position = Vector2(10, 750)
+block_size = Vector2(20, 1500)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Right" parent="Walls" unique_id=545175237 instance=ExtResource("2")]
+position = Vector2(1142, 750)
+block_size = Vector2(20, 1500)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="ShaftLeft" parent="Walls" unique_id=1490875286 instance=ExtResource("2")]
+position = Vector2(573, 430)
+block_size = Vector2(14, 510)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="ShaftRight" parent="Walls" unique_id=319304350 instance=ExtResource("2")]
+position = Vector2(653, 430)
+block_size = Vector2(14, 510)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Ceiling1" parent="Walls" unique_id=1341122987 instance=ExtResource("2")]
+position = Vector2(480, 910)
+block_size = Vector2(120, 14)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Ceiling2" parent="Walls" unique_id=672766279 instance=ExtResource("2")]
+position = Vector2(700, 770)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Ceiling3" parent="Walls" unique_id=1008752280 instance=ExtResource("2")]
+position = Vector2(1000, 110)
+block_size = Vector2(120, 14)
+block_color = Color(0.25, 0.25, 0.3, 1)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1191637298]
+
+[node name="Start" parent="Platforms" unique_id=1112519122 instance=ExtResource("2")]
+position = Vector2(130, 1380)
+scale = Vector2(3.1600013, 1)
+block_size = Vector2(180, 14)
+
+[node name="S1_Step1" parent="Platforms" unique_id=907622411 instance=ExtResource("2")]
+position = Vector2(658, 1381)
+
+[node name="S1_Step1" parent="Platforms/S1_Step1" unique_id=1251745106 instance=ExtResource("2")]
+position = Vector2(646, 1380)
+
+[node name="S1_Step2" parent="Platforms" unique_id=910897971 instance=ExtResource("2")]
+position = Vector2(512, 1173)
+scale = Vector2(0.3199951, 1)
+
+[node name="S1_Step3" parent="Platforms" unique_id=1271306874 instance=ExtResource("2")]
+position = Vector2(340, 1170)
+
+[node name="S1_Step4" parent="Platforms" unique_id=85318842 instance=ExtResource("2")]
+position = Vector2(150, 1100)
+block_size = Vector2(120, 14)
+
+[node name="S2_Plat1" parent="Platforms" unique_id=2083644628 instance=ExtResource("2")]
+position = Vector2(380, 960)
+block_size = Vector2(90, 14)
+
+[node name="S2_Plat2" parent="Platforms" unique_id=201899167 instance=ExtResource("2")]
+position = Vector2(600, 820)
+block_size = Vector2(90, 14)
+
+[node name="S2_Plat3" parent="Platforms" unique_id=2038927389 instance=ExtResource("2")]
+position = Vector2(380, 700)
+block_size = Vector2(90, 14)
+
+[node name="ShaftEntry" parent="Platforms" unique_id=1021569058 instance=ExtResource("2")]
+position = Vector2(600, 680)
+block_size = Vector2(80, 14)
+
+[node name="S4_Plat1" parent="Platforms" unique_id=753654160 instance=ExtResource("2")]
+position = Vector2(620, 200)
+
+[node name="S4_Plat2" parent="Platforms" unique_id=2003751648 instance=ExtResource("2")]
+position = Vector2(790, 200)
+block_size = Vector2(80, 14)
+
+[node name="S4_Plat3" parent="Platforms" unique_id=1870012997 instance=ExtResource("2")]
+position = Vector2(930, 160)
+block_size = Vector2(80, 14)
+
+[node name="S4_Plat4" parent="Platforms" unique_id=730899583 instance=ExtResource("2")]
+position = Vector2(1060, 160)
+block_size = Vector2(80, 14)
+
+[node name="Spikes" type="Node2D" parent="." unique_id=2073089971]
+
+[node name="S1_Spike1" parent="Spikes" unique_id=506556793 instance=ExtResource("3")]
+position = Vector2(220, 1395)
+
+[node name="S1_Spike2" parent="Spikes" unique_id=2092049422 instance=ExtResource("3")]
+position = Vector2(507.00003, 1394)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike2" parent="Spikes/S1_Spike2" unique_id=1479453570 instance=ExtResource("3")]
+position = Vector2(504.00003, 1394)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike3" parent="Spikes/S1_Spike2" unique_id=1534659423 instance=ExtResource("3")]
+position = Vector2(506.00003, 1393)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike2" parent="Spikes/S1_Spike2/S1_Spike3" unique_id=1589865774 instance=ExtResource("3")]
+position = Vector2(504.00003, 1394)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike3" parent="Spikes" unique_id=1189160490 instance=ExtResource("3")]
+position = Vector2(130, 1310)
+spike_size = Vector2(50, 10)
+
+[node name="S2_Spike1" parent="Spikes" unique_id=1332485245 instance=ExtResource("3")]
+position = Vector2(300, 1060)
+spike_size = Vector2(200, 10)
+
+[node name="S2_Spike2" parent="Spikes" unique_id=1651844259 instance=ExtResource("3")]
+position = Vector2(500, 900)
+spike_size = Vector2(150, 10)
+
+[node name="S2_Spike3" parent="Spikes" unique_id=4799696 instance=ExtResource("3")]
+position = Vector2(700, 780)
+spike_size = Vector2(100, 10)
+
+[node name="S3_Spike1" parent="Spikes" unique_id=1031301419 instance=ExtResource("3")]
+position = Vector2(640, 600)
+spike_size = Vector2(20, 10)
+
+[node name="S3_Spike2" parent="Spikes" unique_id=838132107 instance=ExtResource("3")]
+position = Vector2(586, 500)
+spike_size = Vector2(20, 10)
+
+[node name="S3_Spike3" parent="Spikes" unique_id=1560125518 instance=ExtResource("3")]
+position = Vector2(640, 400)
+spike_size = Vector2(20, 10)
+
+[node name="S3_Spike4" parent="Spikes" unique_id=1724247439 instance=ExtResource("3")]
+position = Vector2(586, 300)
+spike_size = Vector2(20, 10)
+
+[node name="S4_Spike1" parent="Spikes" unique_id=1657056941 instance=ExtResource("3")]
+position = Vector2(710, 210)
+spike_size = Vector2(50, 14)
+
+[node name="S4_Spike2" parent="Spikes" unique_id=1959677969 instance=ExtResource("3")]
+position = Vector2(860, 210)
+spike_size = Vector2(40, 14)
+
+[node name="S4_Spike3" parent="Spikes" unique_id=494429542 instance=ExtResource("3")]
+position = Vector2(1000, 170)
+spike_size = Vector2(40, 10)
+
+[node name="Goal" parent="." unique_id=358269469 instance=ExtResource("4")]
+position = Vector2(1070, 130)
+
+[node name="Hints" type="Node2D" parent="." unique_id=1117666583]
+
+[node name="Hint1" type="Label" parent="Hints" unique_id=683837498]
+modulate = Color(1, 1, 1, 0.25)
+offset_left = 35.0
+offset_top = 1390.0
+theme_override_font_sizes/font_size = 13
+text = "A / D — двигайся
+Space — прыжок"
+
+[node name="Hint2" type="Label" parent="Hints" unique_id=1387553516]
+modulate = Color(1, 1, 1, 0.25)
+offset_left = 170.0
+offset_top = 1020.0
+theme_override_font_sizes/font_size = 13
+text = "Колёсико ↓ — ослабь гравитацию
+чтобы прыгнуть дальше!
+Но не перестарайся — врежешься в потолок"
+
+[node name="Hint3" type="Label" parent="Hints" unique_id=682646511]
+modulate = Color(1, 1, 1, 0.25)
+offset_left = 660.0
+offset_top = 650.0
+theme_override_font_sizes/font_size = 13
+text = "Wall jump!
+Space у стены
+Осторожно — шипы!"
+
+[node name="Hint4" type="Label" parent="Hints" unique_id=426870820]
+modulate = Color(1, 1, 1, 0.25)
+offset_left = 630.0
+offset_top = 180.0
+theme_override_font_sizes/font_size = 13
+text = "Подбирай силу гравитации
+для каждого прыжка!"
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2043564104]
+position = Vector2(100, 1350)
+script = ExtResource("5")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=528335225]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 1500
+position_smoothing_enabled = true
+
+[node name="S1_Spike2" parent="." unique_id=1142350326 instance=ExtResource("3")]
+position = Vector2(512, 1214)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike2" parent="S1_Spike2" unique_id=1897863941 instance=ExtResource("3")]
+position = Vector2(504.00003, 1394)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike3" parent="S1_Spike2" unique_id=1809620448 instance=ExtResource("3")]
+position = Vector2(506.00003, 1393)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Spike2" parent="S1_Spike2/S1_Spike3" unique_id=1398337704 instance=ExtResource("3")]
+position = Vector2(504.00003, 1394)
+scale = Vector2(3.2800024, 1)
+spike_size = Vector2(60, 10)
+
+[node name="S1_Step1" parent="." unique_id=1885442442 instance=ExtResource("2")]
+position = Vector2(776, 1335)
+scale = Vector2(1.33874, 27.039148)
+
+[node name="S1_Step1" parent="S1_Step1" unique_id=1941028079 instance=ExtResource("2")]
+position = Vector2(646, 1380)

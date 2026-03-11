@@ -1,0 +1,38 @@
+# Godot 4+ specific ignores
+.godot/
+*.gdshader.glsl
+
+# Build artifacts
+/android/
+/build/
+/dist/
+*.exe
+*.pdb
+*.so
+*.dylib
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.import
+*.remap
+dub.selections.json
+
+# OS files
+.directory
+
+# User-specific
+.user
+*.user
+
+# Debug and temporary
+*.debug
+*.crash
+local.conf
